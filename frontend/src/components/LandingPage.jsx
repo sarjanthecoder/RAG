@@ -57,7 +57,7 @@ function LandingPage({ onUploadSuccess, onStartChat, hasResume }) {
                 setUploadError(result.message || 'Upload failed');
             }
         } catch (err) {
-            setUploadError('Failed to upload. Make sure the backend is running.');
+            setUploadError(err.message || 'Failed to upload. Make sure the backend is running.');
             console.error('Upload error:', err);
         } finally {
             setIsUploading(false);
