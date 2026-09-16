@@ -82,9 +82,12 @@ Coming soon
 
 Sarjan P
 
-GitHub: https://github.com/sarjanthecoder
+
+
 
 LinkedIn: https://linkedin.com/in/sarjan-p-7a97862a0
 
 Portfolio: https://sarjanp.in
+
+livelink: https://rag-t6zf.vercel.app/
 
