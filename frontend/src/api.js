@@ -2,7 +2,7 @@
  * API Client for RAG Resume Chatbot Backend
  */
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://rag-uye6.onrender.com';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
 
 /**
  * Send a chat message and get AI response

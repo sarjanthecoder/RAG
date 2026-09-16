@@ -31,9 +31,17 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Upload directory
-UPLOAD_DIR = "./uploads"
-os.makedirs(UPLOAD_DIR, exist_ok=True)
+# Upload directory (supports local and Vercel serverless /tmp directory)
+if os.getenv("VERCEL"):
+    UPLOAD_DIR = "/tmp/uploads"
+else:
+    UPLOAD_DIR = os.getenv("UPLOAD_DIR", "./uploads")
+
+try:
+    os.makedirs(UPLOAD_DIR, exist_ok=True)
+except OSError:
+    UPLOAD_DIR = "/tmp/uploads"
+    os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 # Current resume path
 current_resume_path = os.getenv("RESUME_PATH", "../my data engg resume.pdf")
